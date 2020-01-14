@@ -1,0 +1,6 @@
+{
+  "port": 5000,
+  "jwtKey": "PoMa_KoM developer :D",
+  "MongoBaseName": "mongodb://localhost/LinksDB",
+  "baseUrl": "http://localhost:5000"
+}
