@@ -1,0 +1,129 @@
+/* Фон */
+body {
+  min-height: 100vh;
+  position: relative;
+  background: linear-gradient(0deg, #c56142, #cf3570, #1f8fb8, #1ea888);
+  /* background: linear-gradient(0deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
+  background-size: 100% 300%;
+  animation: gradientBG 20s ease infinite;
+}
+
+.body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 50% 0%;
+  }
+
+  50% {
+    background-position: 50% 100%;
+  }
+
+  100% {
+    background-position: 50% 0%;
+  }
+}
+
+/* Элементы */
+.loading.progress {
+  margin: 15px auto;
+}
+
+.spinner-white-only {
+  border-color: #fff;
+}
+
+.preloader-wrapper.big {
+  width: 150px;
+  height: 150px;
+}
+
+/* Вспомогательные стили */
+
+.centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 992px) {
+  .container {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+}
+
+/* Хедер */
+
+nav {
+  height: 75px;
+  line-height: 75px;
+  margin: 10px 0;
+}
+
+nav img.logo {
+  height: 75px;
+}
+
+nav ul a {
+  font-size: 1.5rem;
+  height: 75px;
+  line-height: 75px;
+}
+
+/* Карточки */
+.card .title {
+  padding: 15px 0;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+
+img.main-pic {
+  width: 350px;
+}
+
+.card-btns {
+  display: flex;
+  justify-content: space-between;
+}
+
+.links-info p {
+  font-size: 20px;
+  padding: 10px 0;
+}
+
+.links-info p button {
+  margin-left: 15px;
+}
+
+@media only screen and (max-width: 992px) {
+  .card .card-content{
+    padding: 15px 5px;
+  }
+  th, td {
+    font-size: 12px;
+    padding: 2px;
+  }
+
+  .links-info p {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .links-info p button {
+    margin: 10px;
+  }
+}
+
+/* Футер */
+footer {
+  padding: 25px;
+}
+
+@import "~materialize-css/dist/css/materialize.min.css"
