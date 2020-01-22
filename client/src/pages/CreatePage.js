@@ -38,7 +38,7 @@ export const CreatePage = () => {
             <div className="input-field white-text">
               <input
                 id="link"
-                type="text"
+                type="url"
                 value={link}
                 onChange={(e) => setLink(e.target.value)}
                 onKeyPress={keyPressHandler}
@@ -49,7 +49,7 @@ export const CreatePage = () => {
               >Вставьте ссылку</label>
               <span
                 className="helper-text"
-                data-error="Ссылка не корректна">
+                data-error="Ссылка должна начинаться с 'http://' или 'https://'">
               </span>
             </div>
           </div>

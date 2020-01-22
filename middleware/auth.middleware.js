@@ -10,7 +10,7 @@ module.exports = (req, res, next) => {
     const token = req.headers.authorization.split(' ')[1] // 'Bearer TOKEN'
 
     if (!token) {
-      return res.status(401).json({ message: 'Вы не авторизованы. Выполните вход заново' })
+      return res.status(401).json({ message: 'Вы не авторизованы. Выполните вход заново'})
     }
 
     const decoded = jwt.verify(token, config.get('jwtKey'))
@@ -18,6 +18,6 @@ module.exports = (req, res, next) => {
     next()
 
   } catch (e) {
-    res.status(401).json({ message: 'Вы не авторизованы. Выполните вход заново' })
+    res.status(401).json({ message: 'Вы не авторизованы. Выполните вход заново'})
   }
 }

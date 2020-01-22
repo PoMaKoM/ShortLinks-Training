@@ -19,6 +19,12 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 const PORT = config.get('port') || 5000
+const baseUrl = config.get('baseUrl')
+
+if (baseUrl.startsWith('http://') || baseUrl.startsWith('https://')) {
+  console.error("Config Error. Don't use protocol in url!");
+  process.exit(1);
+}
 
 async function start() {
   try {
@@ -29,7 +35,7 @@ async function start() {
     })
     app.listen(PORT, () => console.log(`App started on port: ${PORT}...`))
   } catch (e) {
-    console.log('Server Error...', e.message);
+    console.error('Server Error...', e.message);
     process.exit(1);
   }
 }
