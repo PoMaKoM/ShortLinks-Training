@@ -11,9 +11,9 @@ export const LinksList = ({ links }) => {
       <thead>
         <tr>
           <th>№</th>
-          <th>Длинная ссылка</th>
-          <th>Короткая ссылка</th>
-          <th>Количество переходов</th>
+          <th>Длинная</th>
+          <th>Короткая</th>
+          <th>Переходы</th>
           <th>Подробнее</th>
         </tr>
       </thead>

@@ -5,7 +5,12 @@ import * as clipboard from "clipboard-polyfill";
 export const LinkCard = ({ link }) => {
   const message = useMessage()
   const copyHandler = (e) => {
-    clipboard.writeText(e.target.value);
+    let url = e.target.value
+    if (url.startsWith('http://') || url.startsWith('https://')) {
+      clipboard.writeText(url);
+    } else {
+      clipboard.writeText('http://' + url);
+    }
     message("Скопировано!")
   };
 
@@ -18,7 +23,7 @@ export const LinkCard = ({ link }) => {
           className="waves-effect waves-dark btn blue btn-small">
           Скопировать
         </button></p>
-      <p>Короткая ссылка: <a href={link.UrlShort} target="_blank" rel="noopener noreferrer">{link.UrlShort}</a>
+      <p>Короткая ссылка: <a href={'http://' + link.UrlShort} target="_blank" rel="noopener noreferrer">{link.UrlShort}</a>
         <button
           onClick={copyHandler}
           value={link.UrlShort}

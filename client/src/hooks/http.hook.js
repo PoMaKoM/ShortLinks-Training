@@ -1,9 +1,10 @@
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useContext } from 'react'
+import { AuthContext } from '../context/AuthContext'
 
 export const useHttp = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-
+  const auth = useContext(AuthContext)
 
   const request = useCallback(async (url, method = 'GET', body = null, headers = {}) => {
     setLoading(true)
@@ -17,6 +18,11 @@ export const useHttp = () => {
       const data = await response.json()
 
       if (!response.ok) {
+
+        if (response.status === 401) {
+          auth.logout()
+        }
+
         if (data.errors) {
           throw new Error(data.errors[0].msg)
         } else {
@@ -32,7 +38,7 @@ export const useHttp = () => {
       setLoading(false)
       throw e.message
     }
-  }, [])
+  }, [auth])
 
   const clearError = useCallback(() => setError(null), [])
 

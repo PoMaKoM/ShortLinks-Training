@@ -1,6 +1,6 @@
 {
-  "port": 5000,
+  "port": 80,
   "jwtKey": "PoMa_KoM developer :D",
   "MongoBaseName": "mongodb://localhost/LinksDB",
-  "baseUrl": "http://localhost:5000"
+  "baseUrl": "pomakom.tech"
 }
